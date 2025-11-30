@@ -15,7 +15,10 @@ const port = process.env.PORT || 3300; // for render port
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: FRONTEND_URL || 'https://onawhim.onrender.com',
+    origin: [
+        FRONTEND_URL || "https://onawhim.onrender.com", // deployed frontend
+        "http://localhost:5173" // local dev
+    ],
     credentials: true
 }));
 
