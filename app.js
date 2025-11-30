@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); 
@@ -25,7 +26,10 @@ app.use(cors({
 // MongoDB connection
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+    .catch(err  => {
+        console.error("❌ MongoDB connection failed:", err);
+        process.exit(1);
+    });
 
 // Routes
 const users = require('./routes/users');
