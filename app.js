@@ -58,7 +58,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// --- Activity routes ---
+// --- Activity route ---
 const activities = require('./routes/activities');
 app.use('/activities', activities);
 
