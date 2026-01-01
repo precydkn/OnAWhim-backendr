@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const User = require('./models/user');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
+const JWT_SECRET = process.env.JWT_SECRET || "supersecret"; // for user token
 const FRONTEND_URL = process.env.FRONTEND_URL; // oaw render frontend
 const MONGODB_URI = process.env.MONGODB_URI; // atlas connection string
 
